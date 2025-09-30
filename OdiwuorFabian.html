@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ODIWUOR FABIAN — Portfolio</title>
+  <style>
+    /* --- Global Styles --- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; scroll-behavior: smooth; }
+    a { text-decoration: none; color: inherit; }
+    img, iframe { max-width: 100%; height: auto; display: block; }
+
+    header {
+      background: #222;
+      color: #fff;
+      padding: 15px 0;
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 1000;
+    }
+    .container { width: 90%; max-width: 1100px; margin: auto; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .brand { font-size: 1.4rem; font-weight: bold; }
+    nav { margin-top: 10px; }
+    nav a {
+      margin: 5px 10px;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+      display: inline-block;
+    }
+    nav a:hover { color: #ff9800; }
+
+    section { padding: 100px 20px; min-height: auto; }
+
+    /* --- Section Themes --- */
+    #home { background: #f0f6ff; color: #0066cc; }
+    #services { background: #f4fff4; color: #28a745; }
+    #hobby { background: #f8f0ff; color: #6a0dad; }
+    #contact { background: #fffaf0; color: #e67e22; }
+
+    /* --- Content Styling --- */
+    h1, h2 { margin-bottom: 20px; }
+    p { margin-bottom: 15px; }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 5px 5px 10px 0;
+      transition: 0.3s;
+      font-weight: bold;
+      text-align: center;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn-blue { background: #0066cc; color: #fff; }
+    .btn-green { background: #25D366; color: #fff; }
+    .btn-orange { background: #e67e22; color: #fff; }
+    .btn-purple { background: #6a0dad; color: #fff; }
+    .btn-black { background: #000; color: #fff; }
+
+    /* Services grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Hobby Section */
+    .music-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+    .music-embed, .music-about { flex: 1 1 300px; }
+    .music-about { display: flex; flex-direction: column; gap: 10px; }
+
+    /* Contact Form */
+    .contact-form { max-width: 600px; margin: 20px auto; }
+    .contact-form .form-row { margin-bottom: 15px; }
+    .contact-form label { display: block; font-weight: bold; margin-bottom: 5px; }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .contact-form button {
+      background: #e67e22;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .contact-form button:hover { background: #cc6600; }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    footer nav a {
+      color: #fff;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    footer nav a:hover { color: #ff9800; }
+
+    /* Floating WhatsApp Button */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: #fff;
+      font-size: 24px;
+      padding: 14px 18px;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .floating-whatsapp:hover { background-color: #128C7E; }
+
+    /* Floating Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #0066cc;
+      color: #fff;
+      font-size: 20px;
+      padding: 12px 16px;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .back-to-top:hover { background-color: #004999; }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      nav { margin-top: 10px; }
+      section { padding: 80px 15px; }
+      .music-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="#home" class="brand">ODIWUOR FABIAN</a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#hobby">My Hobby</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="container">
+      <h1>Who is Odiwuor Fabian?</h1>
+      <p>A Computing and Information Science student from Kenyatta University with a strong passion for technology and digital creativity. Since high school, I have enjoyed playing basketball, a sport that sharpened my teamwork and discipline. Alongside academics, I express myself through music as a rapper, combining rhythm and words to inspire and entertain. I also excel in cryptocurrency trading on Binance, where I apply strategy and analysis, as well as online writing and a wide range of computer-based activities. My journey brings together tech, art, and innovation to create impactful solutions and meaningful connections.</p>
+      <a href="#services" class="btn btn-blue">Explore Services</a>
+      <a href="#hobby" class="btn btn-purple">See My Hobby</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2>My Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>💻 Web Design & Development</h3>
+          <p>Creating responsive, SEO-friendly, and visually appealing websites tailored to client needs. My goal is to make sure your brand looks professional and performs at its best online.</p>
+          <a href="https://api.whatsapp.com/send/?phone=254759770969" target="_blank" class="btn btn-green">💬 Contact Me on WhatsApp</a>
+        </div>
+        <div class="service-card">
+          <h3>📝 Document & Certificate Editing</h3>
+          <p>Ensuring accuracy, confidentiality, and professional formatting for academic, official, and personal documents. Your files will always look polished and ready for use.</p>
+          <a href="https://api.whatsapp.com/send/?phone=254759770969" target="_blank" class="btn btn-green">💬 Contact Me on WhatsApp</a>
+        </div>
+        <div class="service-card">
+          <h3>⚙️ Programming</h3>
+          <p>Designing and implementing software solutions with clean, efficient, and well-documented code. I create scalable tools tailored to your business or personal needs.</p>
+          <a href="https://api.whatsapp.com/send/?phone=254759770969" target="_blank" class="btn btn-green">💬 Contact Me on WhatsApp</a>
+        </div>
+        <div class="service-card">
+          <h3>📠 Cybercafé Services</h3>
+          <p>Providing fast, reliable, and customer-friendly support including printing, scanning, typing, and internet services. I also help with:</p>
+          <ul>
+            <li>✔️ eCitizen Portal Services</li>
+            <li>✔️ Business Registration Services (BRS)</li>
+            <li>✔️ Kenya Revenue Authority (KRA) Services</li>
+            <li>✔️ National Land Info System (Ardhisasa)</li>
+            <li>✔️ NSSF Services</li>
+            <li>✔️ Social Health Authority (SHIF)</li>
+          </ul>
+          <a href="https://api.whatsapp.com/send/?phone=254759770969" target="_blank" class="btn btn-green">💬 Contact Me on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hobby Section -->
+  <section id="hobby">
+    <div class="container">
+      <h2>My Hobby — Rap Music</h2>
+      <p>I express myself through rap as <strong>Fellan G</strong>. My lyrics tell my story, my struggles, and my victories. Music is not just a hobby, but a part of who I am.</p>
+      <div class="music-row">
+        <div class="music-embed">
+          <iframe src="https://www.youtube.com/embed/br6FTo-7898?si=_KUVcDb3QVZQRp9i" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="music-about">
+          <p>Follow me on Instagram and YouTube to see more of my journey, and also download or listen to my songs:</p>
+          <a href="https://www.instagram.com/fabian_fellan/" target="_blank" class="btn btn-purple">Instagram</a>
+          <a href="https://www.youtube.com/channel/UCAyp2EYGB4btSPG6p72UjPA" target="_blank" class="btn btn-orange">YouTube</a>
+          <a href="https://play.mdundo.com/artist/266672/Fellan-G" target="_blank" class="btn btn-green">Download / Listen</a>
+          <a href="https://linktr.ee/FellanG" target="_blank" class="btn btn-black">Linktree</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>How to Reach Me</h2>
+      <form class="contact-form" action="mailto:odiwourfabian8@gmail.com" method="POST" enctype="text/plain">
+        <div class="form-row">
+          <label for="name">Your Name</label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Your Email</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <p>WhatsApp: <a href="https://wa.me/254759770969" target="_blank">+254 759 770 969</a></p>
+      <p>Also connect with me on:</p>
+      <p>
+        <a href="https://www.instagram.com/odiwuor.fabian/" target="_blank">Instagram</a> | 
+        <a href="https://www.facebook.com/profile.php?id=100089110345875" target="_blank">Facebook</a> | 
+        <a href="https://www.linkedin.com/in/fabian-odiwuor-944a922aa/" target="_blank">LinkedIn</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Odiwuor Fabian | Fellan G</p>
+      <nav>
+        <a href="https://www.instagram.com/odiwuor.fabian/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=100089110345875" target="_blank">Facebook</a>
+        <a href="https://www.linkedin.com/in/fabian-odiwuor-944a922aa/" target="_blank">LinkedIn</a>
+        <a href="https://linktr.ee/FellanG" target="_blank">LinkTree</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp & Back to Top Buttons -->
+  <a href="https://api.whatsapp.com/send/?phone=254759770969" target="_blank" class="floating-whatsapp">💬</a>
+  <a href="#home" class="back-to-top">↑</a>
+</body>
+</html>
